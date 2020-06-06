@@ -1,0 +1,9 @@
+parameters:
+    level: max
+    paths:
+        - %currentWorkingDirectory%/src
+    classesAllowedToBeExtended:
+        - DomainException
+        - LogicException
+        - InvalidArgumentException
+        - RuntimeException

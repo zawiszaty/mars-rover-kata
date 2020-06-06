@@ -1,0 +1,53 @@
+{
+    "name": "patrykwozinski/php-kata",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patryk Woziński",
+            "email": "patryk.wozinski@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bank\\": "src/Bank/"
+        },
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Bank\\": "tests/Bank"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpstan/phpstan": "^0.11.15",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan-deprecation-rules": "^0.11.2",
+        "phpstan/phpstan-strict-rules": "^0.11.1",
+        "phpstan/phpstan-phpunit": "^0.11.2",
+        "localheinz/phpstan-rules": "^0.11.0",
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpunit/phpunit": "^7.5"
+    },
+    "scripts": {
+        "tests": [
+            "./vendor/bin/phpunit"
+        ],
+        "quality:phpstan": [
+            "./vendor/bin/phpstan analyse"
+        ],
+        "quality:cs:dry": [
+            "./vendor/bin/php-cs-fixer --no-interaction --diff --dry-run -v fix"
+        ],
+        "quality:cs:fix": [
+            "./vendor/bin/php-cs-fixer --no-interaction --diff -v fix"
+        ],
+        "quality:check": [
+            "@quality:cs:dry",
+            "@quality:phpstan"
+        ]
+    }
+}

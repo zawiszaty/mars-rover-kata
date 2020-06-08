@@ -1,3 +1,10 @@
+##How to run
+```bash
+composer install
+```
+```bash
+composer run tests
+```
 ## Object Calisthenics
 1. Only One Level Of Indentation Per Method
 2. Don’t Use The ELSE Keyword

@@ -58,7 +58,12 @@
         "quality:check": [
             "@quality:cs:dry",
             "@quality:phpstan",
-            "@quality:psalm"
+            "@quality:psalm",
+            "@quality:infection"
+        ],
+        "ci": [
+            "@tests",
+            "@quality:check"
         ]
     }
 }

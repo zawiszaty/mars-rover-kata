@@ -75,6 +75,8 @@ final class Planet
 
             $i++;
         }
+
+        throw new \Exception();
     }
 
     private function getFirstYIndex(): int
@@ -87,6 +89,8 @@ final class Planet
         {
             return $index;
         }
+
+        throw new \Exception();
     }
 
     private function getLastXIndex(): int
@@ -107,6 +111,8 @@ final class Planet
 
             $i++;
         }
+
+        throw new \Exception();
     }
 
     private function getFirstXIndex(): int
@@ -119,5 +125,7 @@ final class Planet
         {
             return $index;
         }
+
+        throw new \Exception();
     }
 }

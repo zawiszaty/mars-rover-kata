@@ -7,3 +7,4 @@ parameters:
         - LogicException
         - InvalidArgumentException
         - RuntimeException
+        - MyCLabs\Enum\Enum

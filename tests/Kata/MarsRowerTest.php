@@ -31,9 +31,9 @@ final class MarsRowerTest extends TestCase
 
         $move = $rover->move($moveDirection);
 
-        $this->assertSame($expectedX, $move->getPosition()->getX());
-        $this->assertSame($expectedY, $move->getPosition()->getY());
-        $this->assertTrue($move->getDirection()->equals($expectedDirection));
+        self::assertSame($expectedX, $move->getPosition()->getX());
+        self::assertSame($expectedY, $move->getPosition()->getY());
+        self::assertTrue($move->getDirection()->equals($expectedDirection));
     }
 
     public function moveProvider(): array
@@ -80,9 +80,9 @@ final class MarsRowerTest extends TestCase
 
         $move = $rover->move(MoveDirection::RIGHT());
 
-        $this->assertSame(0, $move->getPosition()->getX());
-        $this->assertSame(0, $move->getPosition()->getY());
-        $this->assertCount(1, $rover->getObstacleEvents());
+        self::assertSame(0, $move->getPosition()->getX());
+        self::assertSame(0, $move->getPosition()->getY());
+        self::assertCount(1, $rover->getObstacleEvents());
     }
 
     /**
@@ -104,9 +104,9 @@ final class MarsRowerTest extends TestCase
 
         $move = $rover->move($moveDirection);
 
-        $this->assertSame($expectedX, $move->getPosition()->getX());
-        $this->assertSame($expectedY, $move->getPosition()->getY());
-        $this->assertTrue($move->getDirection()->equals($expectedDirection));
+        self::assertSame($expectedX, $move->getPosition()->getX());
+        self::assertSame($expectedY, $move->getPosition()->getY());
+        self::assertTrue($move->getDirection()->equals($expectedDirection));
     }
 
     public function gridResetProvider(): array

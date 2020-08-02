@@ -11,6 +11,7 @@ use MyCLabs\Enum\Enum;
  * @method static MoveDirection BACKWARD()
  * @method static MoveDirection LEFT()
  * @method static MoveDirection RIGHT()
+ * @psalm-immutable
  */
 final class MoveDirection extends Enum
 {

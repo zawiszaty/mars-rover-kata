@@ -11,6 +11,7 @@ use MyCLabs\Enum\Enum;
  * @method static Direction EAST()
  * @method static Direction NORTH()
  * @method static Direction SOUTH()
+ * @psalm-immutable
  */
 final class Direction extends Enum
 {

@@ -10,18 +10,21 @@ use Kata\Position;
 final class Planet
 {
     /**
-     * @var array<Field>
+     * @var array<array<FieldInterface>>
      */
     private array $fields;
 
-    public function __construct($fields)
+    /**
+     * @param array<array<FieldInterface>> $fields
+     */
+    public function __construct(array $fields)
     {
         $this->fields = $fields;
     }
 
     public function isFreeField(Position $position): bool
     {
-        return isset($this->fields[$position->getY()][$position->getX()]) && false === $this->fields[$position->getY()][$position->getX()] instanceof Obstacle;
+        return false === $this->fields[$position->getY()][$position->getX()] instanceof Obstacle;
     }
 
     public function resetGrid(Move $move): Move
@@ -59,6 +62,10 @@ final class Planet
         $count = \count($this->fields);
         $i     = 1;
 
+        /**
+         * @var int             $index
+         * @var  FieldInterface $field
+         */
         foreach ($this->fields as $index => $field)
         {
             if ($i === $count)
@@ -72,6 +79,10 @@ final class Planet
 
     private function getFirstYIndex(): int
     {
+        /**
+         * @var int             $index
+         * @var  FieldInterface $field
+         */
         foreach ($this->fields as $index => $field)
         {
             return $index;
@@ -83,6 +94,10 @@ final class Planet
         $count = \count($this->fields[0]);
         $i     = 1;
 
+        /**
+         * @var int             $index
+         * @var  FieldInterface $field
+         */
         foreach ($this->fields[0] as $index => $field)
         {
             if ($i === $count)
@@ -96,6 +111,10 @@ final class Planet
 
     private function getFirstXIndex(): int
     {
+        /**
+         * @var int             $index
+         * @var  FieldInterface $field
+         */
         foreach ($this->fields[0] as $index => $field)
         {
             return $index;

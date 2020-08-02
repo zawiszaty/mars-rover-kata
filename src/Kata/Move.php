@@ -27,7 +27,7 @@ final class Move
 
     public function withX(int $x): self
     {
-        $move           = clone $this;
+        $move           = $this;
         $move->position = new Position($x, $this->position->getY());
 
         return $move;
@@ -35,7 +35,7 @@ final class Move
 
     public function withY(int $y): self
     {
-        $move           = clone $this;
+        $move           = $this;
         $move->position = new Position($this->position->getX(), $y);
 
         return $move;
@@ -43,7 +43,7 @@ final class Move
 
     public function withDirection(Direction $direction): self
     {
-        $move           = clone $this;
+        $move            = $this;
         $move->direction = $direction;
 
         return $move;
